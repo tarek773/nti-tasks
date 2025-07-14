@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #020024;
+            background: linear-gradient(323deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%,
+                    rgba(0, 212, 255, 1) 100%);
+            justify-content: flex-start;
+        
+            padding-top: 50px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            
+        }
+
+        form {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: fit-content;
+            background-color: rgba(255, 255, 255, 0.8);
+            height: 100%;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px ;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        table {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: fit-content;
+            background-color: rgba(255, 255, 255, 0.8);
+            position: center;
+
+            height: 100%;
+
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 3px;
+            text-align: left;
+        }
+
+
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .order-list,
+        .unorder-list {
+            margin: 20px;
+            padding: 10px 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            width: fit-content;
+        }
+        .order-list {
+            list-style-type: upper-alpha;
+        }
+        .unorder-list {
+            list-style-type: circle;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email">
+
+        <label for="gender">Gender</label>
+        <select name="gender" id="gender">
+            <option value="m">male</option>
+            <option value="m">female</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message"></textarea>
+    </form>
+<div>
+    <table>
+        <tr>
+            <th>student_name</th>
+            <th>subject</th>
+            <th>degree</th>
+        </tr>
+        <tr>
+            <td>Tarek</td>
+            <td>Math</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Ahmed</td>
+            <td>Science</td>
+            <td>60</td>
+        </tr>
+        <tr>
+            <td>Ali</td>
+            <td>History</td>
+            <td>70</td>
+    </table>
+</div>
+
+<ol class="order-list">
+    <li>Learn HTML and CSS</li>
+    <li>Learn programming languages (PHP, C#, JavaScript)</li>
+    <li>Learn databases (MySQL, SQL Server, MongoDB)</li>
+    <li>Learn frameworks (Laravel, ASP.NET, Express)</li>
+</ol>
+
+<ul class="unorder-list">
+    <li>Learn HTML and CSS</li>
+    <li>Practice building web applications</li>
+    <li>Explore backend development concepts</li>
+</ul>
+
+
+</body>
+
+</html>
