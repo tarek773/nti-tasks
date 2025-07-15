@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">name</label>
+        <input type="text" placeholder="Enter your name" oninput="sayhallow()" id="name">
+
+        <button type="button" onclick="button()"> cleck me </button>
+
+        <p id="p">
+
+        </p>
+
+        <p id="p2"></p>
+
+        <script>
+            
+
+            function sayhallow() {
+                let name = document.getElementById("name").value
+                document.getElementById("p").innerHTML = "hellow " + name
+            }
+
+            function button() {
+                let name = document.getElementById("name").value
+                document.getElementById("p2").innerHTML = "hellow " + name + " your result is: 90%"
+
+            }
+        </script>
+    </form>
+</body>
+
+</html>

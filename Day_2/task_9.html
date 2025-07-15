@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>صفحة ترحيب</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      direction: rtl;
+      background-color: #f0f0f0;
+    }
+
+    nav {
+      background-color: #4a148c;
+      padding: 15px 20px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      
+    }
+
+    .container {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #6a1b9a;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 250px;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#">عن الموقع</a>
+    <a href="#">اتصل بنا</a>
+  </nav>
+
+  <div class="container">
+    <h1 id="welcomeText">مرحبًا بك!</h1>
+
+    <form onsubmit="return false;">
+      <label>ادخل اسمك:</label><br>
+      <input type="text" id="nameInput" oninput="showMessage()">
+    </form>
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    document.getElementById("welcomeText").textContent = "أهلًا وسهلًا بك في صفحتنا ";
+
+    function showMessage() {
+      const name = document.getElementById("nameInput").value;
+      const msgDiv = document.getElementById("message");
+
+      if (name.trim() !== "") {
+        msgDiv.textContent = `مرحبًا بك يا ${name}!`;
+      } else {
+        msgDiv.textContent = "";
+      }
+    }
+  </script>
+
+</body>
+</html>
