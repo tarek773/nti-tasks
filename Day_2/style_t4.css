@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
   box-sizing: border-box;
   margin: 0;
@@ -104,3 +105,111 @@ table.log-table th {
 }
 
 
+=======
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body.container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #333;
+  min-height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form.log-form {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 40px;
+}
+
+form.log-form label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  border-color: #1e3c72;
+  outline: none;
+}
+
+form button {
+  background-color: #1e3c72;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: #16305a;
+}
+
+h3 {
+  color: #fff;
+  margin: 30px 0 10px;
+  font-size: 22px;
+}
+
+ol.first-ol, ol.second-ol, ul.first-ul, ul.second-ul {
+  background: #ffffffd6;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+ol li, ul li {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+table.log-table {
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+table.log-table th,
+table.log-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+table.log-table th {
+  background-color: #1e3c72;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+
+>>>>>>> 806d7ec577e673210db879bd31339896620e2867

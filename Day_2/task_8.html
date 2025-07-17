@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -89,3 +90,96 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تقدير الدرجة</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #4B0082;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>طارق مصطفى</h1>
+
+  <label>أدخل الدرجة (0 - 100):</label><br>
+  <input type="number" id="gradeInput" min="0" max="100"><br><br>
+
+  <button onclick="calculateGrade()">احسب التقدير</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calculateGrade() {
+      const grade = parseFloat(document.getElementById("gradeInput").value);
+      const resultDiv = document.getElementById("result");
+
+      if (isNaN(grade) || grade < 0 || grade > 100) {
+        resultDiv.textContent = "من فضلك أدخل درجة صحيحة من 0 إلى 100.";
+        resultDiv.style.backgroundColor = "#ffcccc";
+        resultDiv.style.color = "black";
+        return;
+      }
+
+      let resultText = "";
+      let bgColor = "";
+      let textColor = "white";
+
+      if (grade >= 90) {
+        resultText = "ممتاز";
+        bgColor = "#4CAF50";
+      } else if (grade >= 75) {
+        resultText = "جيد جدًا";
+        bgColor = "#2196F3";
+      } else if (grade >= 50) {
+        resultText = "جيد";
+        bgColor = "#FFC107";
+        textColor = "black";
+      } else {
+        resultText = "ضعيف";
+        bgColor = "#f44336";
+      }
+
+      resultDiv.textContent = `تقديرك: ${resultText}`;
+      resultDiv.style.backgroundColor = bgColor;
+      resultDiv.style.color = textColor;
+    }
+  </script>
+
+</body>
+</html>
+>>>>>>> 806d7ec577e673210db879bd31339896620e2867

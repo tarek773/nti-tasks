@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -97,3 +98,104 @@
   <script src="js/bootstrap.bundle.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Event Registration</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet"> 
+</head>
+<body class="bg-light">
+
+  <div class="container my-5">
+
+    <h3 class="mb-4">Attendees Table</h3>
+    <table class="table table-bordered table-hover text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Ali Ahmed</td>
+          <td>ali@example.com</td>
+          <td>01012345678</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Sarah Mahmoud</td>
+          <td>sarah@example.com</td>
+          <td>01123456789</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="mt-5 mb-3">Register for the Event</h3>
+    <form>
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="name" required>
+        <div class="invalid-feedback d-block">Please enter your name.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="nid" class="form-label">National ID</label>
+        <input type="text" class="form-control" id="nid" pattern="\d{14}" required>
+        <div class="invalid-feedback d-block">Must be 14 digits.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" required>
+        <div class="invalid-feedback d-block">Enter a valid email address.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" id="phone" pattern="01[0-2,5]{1}[0-9]{8}" required>
+        <div class="invalid-feedback d-block">Enter a valid Egyptian number.</div>
+      </div>
+
+      <div class="d-flex gap-3">
+        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#warningModal">
+          Read More
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="modal fade" id="warningModal" tabindex="-1" aria-labelledby="warningModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-warning">
+          <h5 class="modal-title" id="warningModalLabel">Important Notes</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Double-check your information before submitting.</li>
+            <li>You won't be able to edit after submission.</li>
+            <li>Your national ID will be verified manually.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.bundle.js"></script>
+</body>
+</html>
+>>>>>>> 806d7ec577e673210db879bd31339896620e2867
