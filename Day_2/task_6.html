@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <h1 id="head">مرحيا !</h1>
+    <button onclick="sayWelcom()"> اضغط </button>
+
+    <script>
+        function sayWelcom() {
+            document.getElementById("head").innerText = "مرحبا بك في موقعنا";
+            document.getElementById("head").style.color = "red";
+            document.getElementById("head").style.fontSize = "30px";
+            document.getElementById("head").style.textAlign = "center";
+            document.getElementById("body").style.backgroundColor = "lightblue";
+        }
+    </script>
+</body>
+</html>
