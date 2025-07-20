@@ -27,7 +27,7 @@
                         echo "<div class='alert alert-success'>upload success</div>";
                         echo "<img src='Uploads/$name' class='img-thumbnail m-2' width='150'>";
                     } else {
-                        echo "<div class='alert alert-warning'>$ :مدعوم غير ملف تجاهل تمname</div>";
+                        echo "<div class='alert alert-warning'>upload faild</div>";
                     }
                 }
             }
