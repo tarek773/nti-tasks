@@ -2,8 +2,10 @@
 require '../db/db.php';
 session_start();
 
-$query = "SELECT * FROM users";
-$result = mysqli_query($conn, $query);
+$stmt = mysqli_prepare($conn, "SELECT * FROM users ");
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+
 
 $users = [];
 while ($row = mysqli_fetch_assoc($result)) {
@@ -65,6 +67,9 @@ foreach ($users as $u) {
                     <a href="../student/show.php" class="btn btn-primary px-4">Students</a>
                     <a href="../course/show.php" class="btn btn-primary px-4">Courses</a>
                     <a href="../enrollment/show.php" class="btn btn-primary px-4">Enrollments</a>
+                    <?php if ($user['role'] == 1) : ?>
+                        <a href="../user/show.php" class="btn btn-primary px-4">Users</a>
+                    <?php endif; ?>
                 </div>
             <?php else: ?>
                 <div class="alert alert-danger">Invalid email or password.</div>
