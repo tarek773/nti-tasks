@@ -60,7 +60,7 @@ foreach ($users as $u) {
                 $user = $_SESSION['user'];
                 echo "<div class='alert alert-success'>Welcome, <strong>{$user['name']}" . (($user['role'] == 1) ? '(Admin)' : '(User)') . "</strong>!</div>";
                 if (!empty($user['image_path'])) {
-                    echo "<img src='{$user['image_path']}' class='img-thumbnail my-3' width='150'>";
+                    echo "<img src='../{$user['image_path']}' class='img-thumbnail my-3' width='150'>";
                 }
                 ?>
                 <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">

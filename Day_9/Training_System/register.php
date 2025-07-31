@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
                 <img src='{$uploadPath}' class='img-thumbnail m-2' width='300'>
                 <h5><b>Name: {$name}</b></h5>
                 <p>Email: {$email}</p>
-                <a href='products.php' class='btn btn-primary w-100 mt-3'>Go To Products</a>
+                <a href='./dashboard/dashboard.php' class='btn btn-primary w-100 mt-3'>Go To Dashboard</a>
               </div>";
     } else {
         echo "<div class='alert alert-danger'>File error or unsupported type.</div>";

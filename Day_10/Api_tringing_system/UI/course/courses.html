@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Courses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ✅ Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="../dashboard/dashboard.html">Training System</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../dashboard/dashboard.html">🏠 Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="courses.html">📚 Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../student/students.html">👨‍🎓 Students</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-danger" href="../auth/logout.html">🚪 Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ✅ Content -->
+  <div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2>Courses</h2>
+      <a href="add_course.html" class="btn btn-success">➕ Add Course</a>
+    </div>
+
+    <table class="table table-bordered table-hover text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Hours</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="courses-table-body">
+        <!-- Courses will be dynamically injected via JS -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+  const API_URL = "http://localhost/nti/Day_10/Api_tringing_system/API/courses";
+
+  // Load all courses
+  fetch(`${API_URL}/read.php`)
+    .then(response => response.json())
+    .then(data => {
+      const tbody = document.getElementById("courses-table-body");
+      tbody.innerHTML = "";
+
+      data.forEach(course => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${course.id}</td>
+          <td>${course.title}</td>
+          <td>${course.description || ''}</td>
+          <td>${course.hours}</td>
+          <td>${course.price}</td>
+          <td>
+            <a href="edit_course.html?id=${course.id}" class="btn btn-sm btn-primary">Edit</a>
+            <button class="btn btn-sm btn-danger delete-btn" data-id="${course.id}">Delete</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      // Attach delete handler
+      document.querySelectorAll(".delete-btn").forEach(btn => {
+        btn.addEventListener("click", function () {
+          const id = this.dataset.id;
+          if (!confirm("Are you sure you want to delete this course?")) return;
+
+          fetch(`${API_URL}/delete.php?id=${id}`, {
+            method: "DELETE",
+          })
+            .then(response => response.json())
+            .then(result => {
+              if (result.message) {
+                alert(result.message);
+                location.reload();
+              } else {
+                alert("Failed to delete course");
+              }
+            })
+            .catch(err => {
+              console.error(err);
+              alert("Error deleting course");
+            });
+        });
+      });
+    });
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
