@@ -1,0 +1,17 @@
+{
+    "name": "zain/send_mail",
+    "autoload": {
+        "psr-4": {
+            "Zain\\SendMail\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tarek733",
+            "email": "tarekmostafa54321@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.10"
+    }
+}
